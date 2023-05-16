@@ -1,0 +1,36 @@
+<span>base</span>
+<input type="number" name="num-1" id="num-1" />
+<span>power</span>
+<input type="number" name="num-2" id="num-2" />
+<input type="button" id="button" value="Calculate" />
+
+<ol id="results"></ol>
+
+<script>
+  const BC = new BroadcastChannel("test");
+
+  const myWorker = new SharedWorker("src/workers/shared-worker.js", "SW_TEST");
+  myWorker.port.start();
+
+  const btn = document.getElementById("button");
+  const inputBase = document.getElementById("num-1") as HTMLInputElement;
+  const inputPow = document.getElementById("num-2") as HTMLInputElement;
+  const results = document.getElementById("results") as HTMLOListElement;
+
+  if (btn && inputBase && inputPow) {
+    btn.addEventListener("click", () => {
+      const base = inputBase.value ?? 0;
+      const pow = inputPow.value ?? 0;
+
+      console.log("[MAIN THREAD] (Sending message) to worker: ", base, pow);
+      myWorker.port.postMessage({ base, pow });
+    });
+  }
+  BC.addEventListener("message", (e) => {
+    console.log("[MAIN THREAD] (Received message) from worker: ", e.data);
+
+    const li = document.createElement("li");
+    li.textContent = `${e.data.base ?? 0} ^ ${e.data.pow ?? 0} = ${e.data.res}`;
+    results.append(li);
+  });
+</script>
