@@ -1,5 +1,5 @@
 ---
-title: "Topic: Shared Worker. What the hell"
+title: "Topic: Shared Worker. What is this?"
 description: "Keynote Introduction"
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: "We need to be sure that user see our message"
+title: "Multiple tabs show the same upsell products"
 description: "Keynote Introduction"
 ---
 
-**Multiple tabs show the same upsell products:**
+**Need to make sure that user has seen our popup:**
 
 <img src="fig.gif" alt="gif" height="750"/>

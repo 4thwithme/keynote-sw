@@ -8,3 +8,5 @@ description: "Keynote Introduction"
 - not supported in Safari (but there is a polyfill)
 - not supported in Edge (but there is a polyfill)
 - need to use with BroadcastChannel for communication between tabs (BC has own limitations)
+- can be hard to use with for beginners
+- may lead to security issues (if CORS is not configured properly)

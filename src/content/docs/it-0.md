@@ -1,5 +1,5 @@
 ---
-title: "Sophisticated diagram"
+title: "Highly Sophisticated Diagram"
 description: "Keynote Introduction"
 ---
 

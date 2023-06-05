@@ -1,5 +1,5 @@
 ---
-title: "What Shared Worker is?"
+title: "What is a Shared Worker?"
 description: "Keynote Introduction"
 ---
 
