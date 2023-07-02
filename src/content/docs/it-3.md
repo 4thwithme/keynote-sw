@@ -10,7 +10,7 @@ description: "Keynote Introduction"
 ```ts
 //-- DO NO MOVE THESE LINES ----------
 const prevWPP = __webpack_public_path__;
-__webpack_public_path__ = `${globalThis.location.origin}${WHITE_LABEL_STORE_PREFIX}/`;
+__webpack_public_path__ = "https://some.url";
 //-- DO NO MOVE THESE LINES ----------
 
 const sharedWorker = new SharedWorker();
