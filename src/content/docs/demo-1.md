@@ -3,7 +3,7 @@ title: "Main Thread"
 description: "Keynote Introduction"
 ---
 
-[Demo](./demo)
+<a href="/keynotesw/demo">Demo</a>
 
 ```ts
 const btn = document.getElementById("button");
@@ -16,17 +16,17 @@ const myWorker = new SharedWorker("src/workers/shared-worker.js", "SW_TEST");
 myWorker.port.start();
 
 if (btn && inputBase && inputPow) {
-  btn.addEventListener("click", () => {
-    const base = inputBase.value ?? 0;
-    const pow = inputPow.value ?? 0;
-    console.log("[MAIN THREAD] (Sending message) to worker: ", base, pow);
-    myWorker.port.postMessage({ base, pow });
-  });
+	btn.addEventListener("click", () => {
+		const base = inputBase.value ?? 0;
+		const pow = inputPow.value ?? 0;
+		console.log("[MAIN THREAD] (Sending message) to worker: ", base, pow);
+		myWorker.port.postMessage({ base, pow });
+	});
 }
 BC.addEventListener("message", (e) => {
-  console.log("[MAIN THREAD] (Received message) from worker: ", e.data);
-  const li = document.createElement("li");
-  li.textContent = `${e.data.base ?? 0} ^ ${e.data.pow ?? 0} = ${e.data.res}`;
-  results.append(li);
+	console.log("[MAIN THREAD] (Received message) from worker: ", e.data);
+	const li = document.createElement("li");
+	li.textContent = `${e.data.base ?? 0} ^ ${e.data.pow ?? 0} = ${e.data.res}`;
+	results.append(li);
 });
 ```

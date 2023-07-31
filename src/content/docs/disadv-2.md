@@ -12,4 +12,4 @@ To debug SW in webkit based browsers, you can use:
   4. done
 ```
 
-<img src="debug.png" alt="gif" height="500"/>
+<img src="/keynotesw/debug.png" alt="gif" height="500"/>

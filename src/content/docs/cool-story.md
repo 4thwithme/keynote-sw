@@ -5,4 +5,4 @@ description: "Keynote Introduction"
 
 **Upsell feature with "hot" products:**
 
-![me](hot.png)
+![me](/keynotesw/hot.png)

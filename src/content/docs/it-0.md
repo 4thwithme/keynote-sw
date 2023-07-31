@@ -3,4 +3,4 @@ title: "Highly Sophisticated Diagram"
 description: "Keynote Introduction"
 ---
 
-![diag](diag.png)
+![diag](/keynotesw/diag.png)
