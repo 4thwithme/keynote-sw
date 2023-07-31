@@ -9,10 +9,7 @@
 <script>
 	const BC = new BroadcastChannel("test");
 
-	const myWorker = new SharedWorker(
-		"/keynotesw/workers/shared-worker.js",
-		"SW_TEST",
-	);
+	const myWorker = new SharedWorker("shared-worker.js", "SW_TEST");
 	myWorker.port.start();
 
 	const btn = document.getElementById("button");

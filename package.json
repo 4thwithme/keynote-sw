@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build && mkdir dist/workers && cp -r workers/* dist/workers",
+		"build": "astro build && cp workers/* dist",
 		"preview": "astro preview",
 		"astro": "astro"
 	},
