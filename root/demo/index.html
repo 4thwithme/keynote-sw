@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<script type="module">const r=new BroadcastChannel("test"),a=new SharedWorker("src/workers/shared-worker.js","SW_TEST");a.port.start();const n=document.getElementById("button"),o=document.getElementById("num-1"),s=document.getElementById("num-2"),d=document.getElementById("results");n&&o&&s&&n.addEventListener("click",()=>{const e=o.value??0,t=s.value??0;console.log("[MAIN THREAD] (Sending message) to worker: ",e,t),a.port.postMessage({base:e,pow:t})});r.addEventListener("message",e=>{console.log("[MAIN THREAD] (Received message) from worker: ",e.data);const t=document.createElement("li");t.textContent=`${e.data.base??0} ^ ${e.data.pow??0} = ${e.data.res}`,d.append(t)});
+</script><span>base</span>
+<input type="number" name="num-1" id="num-1">
+<span>power</span>
+<input type="number" name="num-2" id="num-2">
+<input type="button" id="button" value="Calculate">
+
+<ol id="results"></ol>
